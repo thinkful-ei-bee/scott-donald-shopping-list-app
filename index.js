@@ -20,14 +20,11 @@ $('#js-shopping-list-form').submit(function(event) {
 
 $('.shopping-list' ).on('click', '.shopping-item-toggle', function( event ) {
   $(this)
-    .closest('li') //Target  common parent
-    .find('.shopping-item') //target the element
+    .closest('li')
+    .find('.shopping-item')
     .toggleClass('shopping-item__checked');
 });
 
 $('.shopping-list' ).on('click', '.shopping-item-delete', function( event ) {
   $(this.closest('li')).remove();
-  //  .remove(this.closest('li')); //Target  common parent
-  //.find('.shopping-item') //target the element
-  //.toggleClass('shopping-item__checked');
 });

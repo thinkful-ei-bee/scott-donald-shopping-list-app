@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 /* global $ */
 
@@ -17,6 +18,16 @@ $('#js-shopping-list-form').submit(function(event) {
        </li>`);
 });
 
-$('.shopping-item-toggle').click(function() {
-  console.log(this.closest('span'));
+$('.shopping-list' ).on('click', '.shopping-item-toggle', function( event ) {
+  $(this)
+    .closest('li') //Target  common parent
+    .find('.shopping-item') //target the element
+    .toggleClass('shopping-item__checked');
+});
+
+$('.shopping-list' ).on('click', '.shopping-item-delete', function( event ) {
+  $(this.closest('li')).remove();
+  //  .remove(this.closest('li')); //Target  common parent
+  //.find('.shopping-item') //target the element
+  //.toggleClass('shopping-item__checked');
 });
